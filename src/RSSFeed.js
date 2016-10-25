@@ -1,5 +1,6 @@
 import React from 'react';
 
+import RSSLoader from './RSSLoader';
 import RSSItem from './RSSItem';
 
 export default class RSSFeed extends React.Component {
@@ -9,6 +10,16 @@ export default class RSSFeed extends React.Component {
         this.state = {
             feed: []
         };
+    }
+
+    componentDidMount () {
+        RSSLoader.getJSON(this.props.url)
+            .then(feed => this.setState({feed: feed}))
+            .catch(error => {
+                // TODO: Handle fetch error
+                // eslint-disable-next-line no-console
+                console.error(error);
+            });
     }
 
     render () {
