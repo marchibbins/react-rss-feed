@@ -9,7 +9,8 @@
   "scripts": {
     "dist": "webpack",
     "lint": "eslint .",
-    "start": "webpack-dev-server --content-base ./dist --colors --progress"
+    "start": "webpack-dev-server --content-base ./dist --colors --progress",
+    "watch": "webpack -w"
   },
   "pre-commit": [
     "lint"
