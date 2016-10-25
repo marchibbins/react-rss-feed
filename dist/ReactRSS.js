@@ -44,8 +44,9 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	console.log('ReactRSS');
+	'use strict';
 
+	console.log('ReactRSS');
 
 /***/ }
 /******/ ]);
