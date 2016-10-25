@@ -6,5 +6,9 @@ module.exports = {
     output: {
         path: "./dist",
         filename: "[name].js"
+    },
+    externals: {
+        "react": "React",
+        "react-dom": "ReactDOM"
     }
 }
