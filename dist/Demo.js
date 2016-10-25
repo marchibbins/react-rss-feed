@@ -78,7 +78,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	/* global ReactRSS */
+	/* global RSSFeed */
 
 	var Demo = function (_React$Component) {
 	    _inherits(Demo, _React$Component);
@@ -92,7 +92,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    _createClass(Demo, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(ReactRSS, { url: '#' });
+	            return _react2.default.createElement(RSSFeed, { url: '#' });
 	        }
 	    }]);
 
@@ -102,7 +102,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Demo;
 
 
-	_reactDom2.default.render(_react2.default.createElement(Demo, null), document.getElementById('react-rss-demo'));
+	_reactDom2.default.render(_react2.default.createElement(Demo, null), document.getElementById('react-rss-feed-demo'));
 
 /***/ },
 /* 1 */

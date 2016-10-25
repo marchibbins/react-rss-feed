@@ -1,7 +1,7 @@
 module.exports = {
     entry: {
         Demo: './src/Demo.js',
-        ReactRSS: './src/ReactRSS.js'
+        RSSFeed: './src/RSSFeed.js'
     },
     output: {
         path: './dist',

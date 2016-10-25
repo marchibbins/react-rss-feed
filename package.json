@@ -1,8 +1,8 @@
 {
-  "name": "react-rss",
+  "name": "react-rss-feed",
   "version": "0.1.0",
   "description": "",
-  "main": "dist/ReactRSS.js",
+  "main": "dist/RSSFeed.js",
   "files": [
     "dist"
   ],

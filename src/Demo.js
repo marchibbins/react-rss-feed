@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-/* global ReactRSS */
+/* global RSSFeed */
 
 export default class Demo extends React.Component {
 
     render () {
         return (
-            <ReactRSS url="#"/>
+            <RSSFeed url="#"/>
         );
     }
 
 }
 
-ReactDOM.render(<Demo/>, document.getElementById('react-rss-demo'));
+ReactDOM.render(<Demo/>, document.getElementById('react-rss-feed-demo'));

@@ -1,4 +1,4 @@
-# React RSS component
+# React RSS feed component
 
 Build:
 

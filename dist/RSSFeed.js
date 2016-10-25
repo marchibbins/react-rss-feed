@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define(["React"], factory);
 	else if(typeof exports === 'object')
-		exports["ReactRSS"] = factory(require("react"));
+		exports["RSSFeed"] = factory(require("react"));
 	else
-		root["ReactRSS"] = factory(root["React"]);
+		root["RSSFeed"] = factory(root["React"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -70,13 +70,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ReactRSS = function (_React$Component) {
-	    _inherits(ReactRSS, _React$Component);
+	var RSSFeed = function (_React$Component) {
+	    _inherits(RSSFeed, _React$Component);
 
-	    function ReactRSS(props) {
-	        _classCallCheck(this, ReactRSS);
+	    function RSSFeed(props) {
+	        _classCallCheck(this, RSSFeed);
 
-	        var _this = _possibleConstructorReturn(this, (ReactRSS.__proto__ || Object.getPrototypeOf(ReactRSS)).call(this, props));
+	        var _this = _possibleConstructorReturn(this, (RSSFeed.__proto__ || Object.getPrototypeOf(RSSFeed)).call(this, props));
 
 	        _this.state = {
 	            feed: []
@@ -84,30 +84,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return _this;
 	    }
 
-	    _createClass(ReactRSS, [{
+	    _createClass(RSSFeed, [{
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'h1',
 	                null,
-	                'ReactRSS'
+	                'React RSS Feed'
 	            );
 	        }
 	    }]);
 
-	    return ReactRSS;
+	    return RSSFeed;
 	}(_react2.default.Component);
 
-	ReactRSS.propTypes = {
+	RSSFeed.propTypes = {
 	    url: _react2.default.PropTypes.string.isRequired,
 	    count: _react2.default.PropTypes.number
 	};
 
-	ReactRSS.defaultProps = {
+	RSSFeed.defaultProps = {
 	    count: 10
 	};
 
-	module.exports = ReactRSS;
+	module.exports = RSSFeed;
 
 /***/ },
 /* 1 */
