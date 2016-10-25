@@ -6,12 +6,6 @@ import RSSItem from '../src/RSSItem';
 
 describe('RSSItem', () => {
 
-    const props = {
-        title: 'Lorem ipsum',
-        description: 'Dolor sit amet',
-        link: '//example.com/lorem-ipsum'
-    };
-
     it('requires a title string property', () => {
         expect(RSSItem.propTypes.title).toBe(React.PropTypes.string.isRequired);
     });
@@ -25,6 +19,12 @@ describe('RSSItem', () => {
     });
 
     describe('Rendering', () => {
+
+        const props = {
+            title: 'Lorem ipsum',
+            description: 'Dolor sit amet',
+            link: '//example.com/lorem-ipsum'
+        };
 
         let wrapper;
 
