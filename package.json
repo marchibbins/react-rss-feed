@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "dist": "webpack",
+    "lint": "eslint .",
     "start": "webpack-dev-server --content-base ./dist --colors --progress"
   },
   "devDependencies": {
