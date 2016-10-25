@@ -1,9 +1,13 @@
-test('ReactRSS requires a URL property');
+describe('ReactRSS', () => {
 
-test('ReactRSS optionally takes a count property');
+    it('requires a URL string property');
 
-test('ReactRSS fetches the given URL');
+    it('optionally takes a count number property');
 
-test('ReactRSS renders one <item> feed item');
+    it('fetches the given URL');
 
-test('ReactRSS enforces count property');
+    it('renders one item per feed item');
+
+    it('enforces the count property');
+
+});
