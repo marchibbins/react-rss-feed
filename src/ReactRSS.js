@@ -15,4 +15,8 @@ ReactRSS.propTypes = {
     count: React.PropTypes.number
 };
 
+ReactRSS.defaultProps = {
+    count: 10
+};
+
 module.exports = ReactRSS;

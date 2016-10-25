@@ -98,6 +98,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    count: _react2.default.PropTypes.number
 	};
 
+	ReactRSS.defaultProps = {
+	    count: 10
+	};
+
 	module.exports = ReactRSS;
 
 /***/ },

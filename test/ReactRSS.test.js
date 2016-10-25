@@ -12,9 +12,17 @@ describe('ReactRSS', () => {
         expect(ReactRSS.propTypes.count).toBe(React.PropTypes.number);
     });
 
+    it('has a default count property of 10', () => {
+        expect(ReactRSS.defaultProps.count).toBe(10);
+    });
+
+    it('has an initial state containing an empty feed array');
+
     it('fetches the given URL');
 
-    it('renders one item per feed item');
+    it('populates feed array in state');
+
+    it('renders one element per item in feed array');
 
     it('enforces the count property');
 
