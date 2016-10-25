@@ -14,7 +14,8 @@
     "watch": "webpack -w"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "test"
   ],
   "devDependencies": {
     "babel-core": "^6.18.0",
