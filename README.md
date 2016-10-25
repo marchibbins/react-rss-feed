@@ -1,9 +1,9 @@
 # React RSS feed component
 
-Build:
+Build
 
-    npm run dist
+    npm run build
 
-Dev:
+Example [http://localhost:8080/example/](http://localhost:8080/example/)
 
     npm run start

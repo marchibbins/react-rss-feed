@@ -2,14 +2,14 @@
   "name": "react-rss-feed",
   "version": "0.1.0",
   "description": "",
-  "main": "dist/RSSFeed.js",
+  "main": "lib/RSSFeed.js",
   "files": [
-    "dist"
+    "lib"
   ],
   "scripts": {
-    "dist": "webpack",
+    "build": "webpack",
     "lint": "eslint .",
-    "start": "webpack-dev-server --content-base ./dist --colors --progress",
+    "start": "webpack-dev-server --colors --progress",
     "test": "jest",
     "watch": "webpack -w"
   },

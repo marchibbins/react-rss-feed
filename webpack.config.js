@@ -3,7 +3,7 @@ module.exports = {
         RSSFeed: './src/RSSFeed.js'
     },
     output: {
-        path: './dist',
+        path: './lib',
         filename: '[name].js',
         libraryTarget: 'umd',
         library: '[name]'
