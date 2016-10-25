@@ -1,26 +1,26 @@
 module.exports = {
     entry: {
-        Demo: "./src/Demo.js",
-        ReactRSS: "./src/ReactRSS.js"
+        Demo: './src/Demo.js',
+        ReactRSS: './src/ReactRSS.js'
     },
     output: {
-        path: "./dist",
-        filename: "[name].js",
-        libraryTarget: "umd",
-        library: "[name]"
+        path: './dist',
+        filename: '[name].js',
+        libraryTarget: 'umd',
+        library: '[name]'
     },
     externals: {
-        "react": {
-            commonjs: "react",
-            commonjs2: "react",
-            amd: "React",
-            root: "React"
+        'react': {
+            commonjs: 'react',
+            commonjs2: 'react',
+            amd: 'React',
+            root: 'React'
         },
-        "react-dom": {
-            commonjs: "react-dom",
-            commonjs2: "react-dom",
-            amd: "ReactDOM",
-            root: "ReactDOM"
+        'react-dom': {
+            commonjs: 'react-dom',
+            commonjs2: 'react-dom',
+            amd: 'ReactDOM',
+            root: 'ReactDOM'
         }
     },
     module: {
@@ -35,4 +35,4 @@ module.exports = {
             }
         ]
     }
-}
+};
