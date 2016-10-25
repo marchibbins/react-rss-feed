@@ -8,7 +8,12 @@
     <script src="RSSFeed.js"></script>
 </head>
 <body>
-    <main id="react-rss-feed-demo"></main>
-    <script src="Demo.js"></script>
+    <main id="react-rss-feed"></main>
+    <script type="text/javascript">
+        /* global React, ReactDOM, RSSFeed */
+        ReactDOM.render(
+            React.createElement(RSSFeed, {url: ''}),
+            document.getElementById('react-rss-feed'));
+    </script>
 </body>
 </html>

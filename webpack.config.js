@@ -1,6 +1,5 @@
 module.exports = {
     entry: {
-        Demo: './src/Demo.js',
         RSSFeed: './src/RSSFeed.js'
     },
     output: {
