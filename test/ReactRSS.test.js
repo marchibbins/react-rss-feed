@@ -1,8 +1,14 @@
 import React from 'react';
 
+import { shallow } from 'enzyme';
+
 import ReactRSS from '../src/ReactRSS';
 
 describe('ReactRSS', () => {
+
+    const props = {
+        url: '//example.com/feed.rss'
+    };
 
     it('requires a URL string property', () => {
         expect(ReactRSS.propTypes.url).toBe(React.PropTypes.string.isRequired);
@@ -16,7 +22,10 @@ describe('ReactRSS', () => {
         expect(ReactRSS.defaultProps.count).toBe(10);
     });
 
-    it('has an initial state containing an empty feed array');
+    it('has an initial state containing an empty feed array', () => {
+        const wrapper = shallow(<ReactRSS {...props} />);
+        expect(wrapper.state().feed).toEqual([]);
+    });
 
     it('fetches the given URL');
 

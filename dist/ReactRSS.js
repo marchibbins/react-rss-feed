@@ -73,10 +73,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	var ReactRSS = function (_React$Component) {
 	    _inherits(ReactRSS, _React$Component);
 
-	    function ReactRSS() {
+	    function ReactRSS(props) {
 	        _classCallCheck(this, ReactRSS);
 
-	        return _possibleConstructorReturn(this, (ReactRSS.__proto__ || Object.getPrototypeOf(ReactRSS)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (ReactRSS.__proto__ || Object.getPrototypeOf(ReactRSS)).call(this, props));
+
+	        _this.state = {
+	            feed: []
+	        };
+	        return _this;
 	    }
 
 	    _createClass(ReactRSS, [{
