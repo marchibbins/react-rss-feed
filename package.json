@@ -1,10 +1,16 @@
 {
-  "private": true,
+  "name": "react-rss",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/ReactRSS.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "server": "webpack-dev-server --content-base ./dist --colors --progress"
+  },
   "devDependencies": {
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
-  },
-  "scripts": {
-    "server": "webpack-dev-server --content-base ./dist --colors --progress"
   }
 }
