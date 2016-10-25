@@ -1,6 +1,6 @@
 import React from 'react';
 
-class RSSFeed extends React.Component {
+export default class RSSFeed extends React.Component {
 
     constructor (props) {
         super(props);
@@ -25,5 +25,3 @@ RSSFeed.propTypes = {
 RSSFeed.defaultProps = {
     count: 10
 };
-
-module.exports = RSSFeed;
