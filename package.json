@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "dist": "webpack",
-    "server": "webpack-dev-server --content-base ./dist --colors --progress"
+    "start": "webpack-dev-server --content-base ./dist --colors --progress"
   },
   "devDependencies": {
     "babel-core": "^6.18.0",
