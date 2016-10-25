@@ -4,7 +4,7 @@ module.exports = {
         ReactRSS: "./src/ReactRSS.js"
     },
     output: {
-        path: "dist",
+        path: "./dist",
         filename: "[name].js"
     }
 }
