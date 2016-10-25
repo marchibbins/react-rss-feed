@@ -93,6 +93,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return ReactRSS;
 	}(_react2.default.Component);
 
+	ReactRSS.propTypes = {
+	    url: _react2.default.PropTypes.string.isRequired,
+	    count: _react2.default.PropTypes.number
+	};
+
 	module.exports = ReactRSS;
 
 /***/ },

@@ -10,4 +10,9 @@ class ReactRSS extends React.Component {
 
 }
 
+ReactRSS.propTypes = {
+    url: React.PropTypes.string.isRequired,
+    count: React.PropTypes.number
+};
+
 module.exports = ReactRSS;

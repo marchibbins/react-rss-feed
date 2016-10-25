@@ -92,7 +92,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    _createClass(Demo, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(ReactRSS, null);
+	            return _react2.default.createElement(ReactRSS, { url: '#' });
 	        }
 	    }]);
 
