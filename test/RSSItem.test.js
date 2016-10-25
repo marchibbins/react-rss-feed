@@ -18,15 +18,13 @@ describe('RSSItem', () => {
         expect(RSSItem.propTypes.link).toBe(React.PropTypes.string.isRequired);
     });
 
-    describe('Rendering', () => {
+    describe('Rendering', (wrapper = null) => {
 
         const props = {
             title: 'Lorem ipsum',
             description: 'Dolor sit amet',
             link: '//example.com/lorem-ipsum'
         };
-
-        let wrapper;
 
         beforeEach(() => {
             wrapper = shallow(<RSSItem {...props}/>);
