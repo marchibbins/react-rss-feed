@@ -1,5 +1,7 @@
 import React from 'react';
 
+import RSSItem from './RSSItem';
+
 export default class RSSFeed extends React.Component {
 
     constructor (props) {
@@ -11,7 +13,9 @@ export default class RSSFeed extends React.Component {
 
     render () {
         return (
-            <h1>React RSS Feed</h1>
+            <div>
+                {this.state.feed.map((item, i) => <RSSItem key={i} {...item}/>)}
+            </div>
         );
     }
 

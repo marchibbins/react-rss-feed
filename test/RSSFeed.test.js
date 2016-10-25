@@ -3,12 +3,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import RSSFeed from '../src/RSSFeed';
+import RSSItem from '../src/RSSItem';
 
 describe('RSSFeed', () => {
-
-    const props = {
-        url: '//example.com/feed.rss'
-    };
 
     it('requires a URL string property', () => {
         expect(RSSFeed.propTypes.url).toBe(React.PropTypes.string.isRequired);
@@ -22,17 +19,39 @@ describe('RSSFeed', () => {
         expect(RSSFeed.defaultProps.count).toBe(10);
     });
 
-    it('has an initial state containing an empty feed array', () => {
-        const wrapper = shallow(<RSSFeed {...props} />);
-        expect(wrapper.state().feed).toEqual([]);
-    });
-
     it('fetches the given URL');
 
     it('populates feed array in state');
 
-    it('renders one element per item in feed array');
-
     it('enforces the count property');
+
+    describe('Rendering', (wrapper = null) => {
+
+        const props = {
+            url: '//example.com/feed.rss'
+        };
+
+        const state = {
+            feed: [
+                {title: 'One', description: 'Lorem ipsum', link: '#'},
+                {title: 'Two', description: 'Lorem ipsum', link: '#'},
+                {title: 'Three', description: 'Lorem ipsum', link: '#'}
+            ]
+        };
+
+        beforeEach(() => {
+            wrapper = shallow(<RSSFeed {...props}/>);
+        });
+
+        it('has an initial state containing an empty feed array', () => {
+            expect(wrapper.state().feed).toEqual([]);
+        });
+
+        it('renders one RSSItem per element in feed array', () => {
+            wrapper.setState(state);
+            expect(wrapper.find(RSSItem).length).toBe(state.feed.length);
+        });
+
+    });
 
 });
