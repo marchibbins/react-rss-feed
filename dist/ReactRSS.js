@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("React"));
 	else if(typeof define === 'function' && define.amd)
-		define([], factory);
+		define(["React"], factory);
 	else if(typeof exports === 'object')
-		exports["ReactRSS"] = factory();
+		exports["ReactRSS"] = factory(require("React"));
 	else
-		root["ReactRSS"] = factory();
-})(this, function() {
+		root["ReactRSS"] = factory(root["React"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -52,11 +52,54 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	console.log('ReactRSS');
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ReactRSS = function (_React$Component) {
+	    _inherits(ReactRSS, _React$Component);
+
+	    function ReactRSS() {
+	        _classCallCheck(this, ReactRSS);
+
+	        return _possibleConstructorReturn(this, (ReactRSS.__proto__ || Object.getPrototypeOf(ReactRSS)).apply(this, arguments));
+	    }
+
+	    _createClass(ReactRSS, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'h1',
+	                null,
+	                'ReactRSS'
+	            );
+	        }
+	    }]);
+
+	    return ReactRSS;
+	}(_react2.default.Component);
+
+	module.exports = ReactRSS;
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
 /***/ }
 /******/ ])

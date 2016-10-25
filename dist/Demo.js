@@ -78,6 +78,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	/* global ReactRSS */
+
 	var Demo = function (_React$Component) {
 	    _inherits(Demo, _React$Component);
 
@@ -90,11 +92,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    _createClass(Demo, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(
-	                'h1',
-	                null,
-	                'Demo'
-	            );
+	            return _react2.default.createElement(ReactRSS, null);
 	        }
 	    }]);
 
