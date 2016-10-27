@@ -21,6 +21,10 @@ describe('RSSFeed', () => {
 
     it('fetches the given URL');
 
+    it('requires a blockName string property');
+
+    it('has a default blockName property');
+
     it('populates feed array in state');
 
     it('enforces the count property');
@@ -51,6 +55,10 @@ describe('RSSFeed', () => {
             wrapper.setState(state);
             expect(wrapper.find(RSSItem).length).toBe(state.feed.length);
         });
+
+        it('uses the blockName in root element class');
+
+        it('passes blockName to each RSSItem');
 
     });
 

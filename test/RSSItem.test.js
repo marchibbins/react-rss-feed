@@ -18,9 +18,14 @@ describe('RSSItem', () => {
         expect(RSSItem.propTypes.link).toBe(React.PropTypes.string.isRequired);
     });
 
+    it('requires a blockName string property', () => {
+        expect(RSSItem.propTypes.blockName).toBe(React.PropTypes.string.isRequired);
+    });
+
     describe('Rendering', (wrapper = null) => {
 
         const props = {
+            blockName: 'rss-feed',
             title: 'Lorem ipsum',
             description: 'Dolor sit amet',
             link: '//example.com/lorem-ipsum'
@@ -43,6 +48,12 @@ describe('RSSItem', () => {
             expect(link.length).toBe(1);
             expect(link.type()).toEqual('a');
         });
+
+        it('uses the blockName in title element class');
+
+        it('uses the blockName in description element class');
+
+        it('uses the blockName in link element class');
 
     });
 
