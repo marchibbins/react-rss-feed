@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 import RSSItem from '../src/RSSItem';
 
-describe('RSSItem', () => {
+describe('RSSItem component', () => {
 
     it('requires a title string property', () => {
         expect(RSSItem.propTypes.title).toBe(React.PropTypes.string.isRequired);
@@ -49,11 +49,27 @@ describe('RSSItem', () => {
             expect(link.type()).toEqual('a');
         });
 
-        it('uses the blockName in title element class');
+        it('uses the blockName in root element class', () => {
+            expect(wrapper.hasClass(`${props.blockName}__item`)).toBe(true);
+        });
 
-        it('uses the blockName in description element class');
+        it('uses the blockName in title element class', () => {
+            const title = wrapper.find(`.${props.blockName}__title`);
+            expect(title.length).toBe(1);
+            expect(title.text()).toBe(props.title);
+        });
 
-        it('uses the blockName in link element class');
+        it('uses the blockName in description element class', () => {
+            const description = wrapper.find(`.${props.blockName}__description`);
+            expect(description.length).toBe(1);
+            expect(description.text()).toBe(props.description);
+        });
+
+        it('uses the blockName in link element class', () => {
+            const link = wrapper.find(`.${props.blockName}__link`);
+            expect(link.length).toBe(1);
+            expect(link.type()).toEqual('a');
+        });
 
     });
 

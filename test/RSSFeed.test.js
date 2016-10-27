@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 import RSSFeed from '../src/RSSFeed';
 import RSSItem from '../src/RSSItem';
 
-describe('RSSFeed', () => {
+describe('RSSFeed component', () => {
 
     it('requires a URL string property', () => {
         expect(RSSFeed.propTypes.url).toBe(React.PropTypes.string.isRequired);
@@ -21,9 +21,13 @@ describe('RSSFeed', () => {
 
     it('fetches the given URL');
 
-    it('requires a blockName string property');
+    it('requires a blockName string property', () => {
+        expect(RSSFeed.propTypes.blockName).toBe(React.PropTypes.string.isRequired);
+    });
 
-    it('has a default blockName property');
+    it('has a default blockName property', () => {
+        expect(RSSFeed.defaultProps.blockName).toMatch(/^\w/);
+    });
 
     it('populates feed array in state');
 
@@ -32,6 +36,7 @@ describe('RSSFeed', () => {
     describe('Rendering', (wrapper = null) => {
 
         const props = {
+            blockName: 'rss-feed',
             url: '//example.com/feed.rss'
         };
 
@@ -56,9 +61,16 @@ describe('RSSFeed', () => {
             expect(wrapper.find(RSSItem).length).toBe(state.feed.length);
         });
 
-        it('uses the blockName in root element class');
+        it('uses the blockName in root element class', () => {
+            expect(wrapper.hasClass(props.blockName)).toBe(true);
+        });
 
-        it('passes blockName to each RSSItem');
+        it('passes blockName to each RSSItem', () => {
+            wrapper.setState(state);
+            wrapper.find(RSSItem).forEach(function (item) {
+                expect(item.props().blockName).toBe(props.blockName);
+            });
+        });
 
     });
 

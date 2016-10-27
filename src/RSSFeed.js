@@ -24,19 +24,24 @@ export default class RSSFeed extends React.Component {
 
     render () {
         return (
-            <div>
-                {this.state.feed.map((item, i) => <RSSItem key={i} {...item}/>)}
-            </div>
+            <section className={`${this.props.blockName}`}>
+                {this.state.feed.map((item, i) => {
+                    return <RSSItem key={i} {...item}
+                                    blockName={this.props.blockName}/>;
+                })}
+            </section>
         );
     }
 
 }
 
 RSSFeed.propTypes = {
-    url: React.PropTypes.string.isRequired,
-    count: React.PropTypes.number
+    blockName: React.PropTypes.string.isRequired,
+    count: React.PropTypes.number,
+    url: React.PropTypes.string.isRequired
 };
 
 RSSFeed.defaultProps = {
+    blockName: 'rss-feed',
     count: 10
 };
