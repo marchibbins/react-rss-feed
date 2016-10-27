@@ -6,7 +6,8 @@ module.exports = {
         path: './lib',
         filename: '[name].js',
         libraryTarget: 'umd',
-        library: '[name]'
+        library: '[name]',
+        publicPath: '/lib/'
     },
     externals: {
         'react': {
