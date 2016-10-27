@@ -38,6 +38,7 @@
     "es6-promise": "^4.0.5",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "xmljson": "^0.2.0",
     "whatwg-fetch": "^1.0.0"
   }
 }

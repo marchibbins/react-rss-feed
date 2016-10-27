@@ -13,10 +13,10 @@ export default class RSSFeed extends React.Component {
     }
 
     componentDidMount () {
-        RSSLoader.getJSON(this.props.url)
+        RSSLoader.getFeed(this.props.url)
             .then(feed => this.setState({feed: feed}))
             .catch(error => {
-                // TODO: Handle fetch error
+                // TODO: Handle fetch or parse error
                 // eslint-disable-next-line no-console
                 console.error(error);
             });
