@@ -14,7 +14,12 @@ export default class RSSFeed extends React.Component {
 
     componentDidMount () {
         RSSLoader.getFeed(this.props.url)
-            .then(feed => this.setState({feed: feed}))
+            .then(feed => {
+                let items = feed.rss.channel.item; // Object not array!
+                this.setState({
+                    feed: Object.keys(items).map(key => items[key])
+                });
+            })
             .catch(error => {
                 // TODO: Handle fetch or parse error
                 // eslint-disable-next-line no-console

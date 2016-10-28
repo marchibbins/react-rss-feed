@@ -25,8 +25,7 @@ export const parseFeed = xmlString => {
             if (error) {
                 reject(error);
             } else {
-                let items = json.rss.channel.item; // Object not array!
-                resolve(Object.keys(items).map(key => items[key]));
+                resolve(json);
             }
         });
    });
