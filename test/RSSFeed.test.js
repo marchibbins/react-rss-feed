@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import RSSFeed from '../src/RSSFeed';
 import RSSItem from '../src/RSSItem';
+import RSSLoader from '../src/RSSLoader';
 
 describe('RSSFeed component', () => {
 
@@ -26,8 +27,6 @@ describe('RSSFeed component', () => {
     it('has a default blockName property', () => {
         expect(RSSFeed.defaultProps.blockName).toMatch(/^\w/);
     });
-
-    xit('populates feed array in state');
 
     xit('enforces the count property');
 
@@ -67,6 +66,32 @@ describe('RSSFeed component', () => {
             wrapper.setState(state);
             wrapper.find(RSSItem).forEach(function (item) {
                 expect(item.props().blockName).toBe(props.blockName);
+            });
+        });
+
+        it('attempts to get the feed at the given URL', () => {
+            RSSLoader.getFeed = jest.fn().mockReturnValue(new Promise(() => {}));
+            wrapper = mount(<RSSFeed {...props}/>);
+            expect(RSSLoader.getFeed).toBeCalledWith(props.url);
+            RSSLoader.getFeed.mockClear();
+        });
+
+        it('populates state with items from feed', () => {
+            RSSLoader.getFeed = jest.fn().mockReturnValue(new Promise((resolve) => {
+                resolve({
+                    rss: {
+                        channel: {
+                            // xmljson converts items array to object
+                            item: Object.assign(...state.items.map((item, i) => ({[i]: item})))
+                        }
+                    }
+                });
+            }));
+
+            wrapper = mount(<RSSFeed {...props}/>);
+            return Promise.resolve().then(() => {
+                expect(wrapper.state().items).toEqual(state.items);
+                RSSLoader.getFeed.mockClear();
             });
         });
 
