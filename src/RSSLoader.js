@@ -6,7 +6,7 @@ import 'whatwg-fetch';
 
 ES6Promise.polyfill();
 
-const fetchFeed = url => {
+export const fetchFeed = url => {
     return fetch(url)
         .then(response => {
             if (response.status >= 200 && response.status < 300) {
@@ -19,7 +19,7 @@ const fetchFeed = url => {
         });
 };
 
-const parseFeed = xmlString => {
+export const parseFeed = xmlString => {
     return new Promise(function (resolve, reject) {
         to_json(xmlString, function (error, json) {
             if (error) {
