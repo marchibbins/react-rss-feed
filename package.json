@@ -1,7 +1,19 @@
 {
   "name": "react-rss-feed",
   "version": "0.1.0",
-  "description": "",
+  "description": "Simple modifiable React component that fetches and displays an RSS feed",
+  "license": "CC-BY-4.0",
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/marchibbins/react-rss-feed.git"
+  },
+  "keywords": [
+    "react",
+    "rss",
+    "jest",
+    "enzyme",
+    "webpack"
+  ],
   "main": "lib/RSSFeed.js",
   "files": [
     "lib"
