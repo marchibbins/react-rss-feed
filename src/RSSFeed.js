@@ -15,9 +15,10 @@ export default class RSSFeed extends React.Component {
     componentDidMount () {
         RSSLoader.getFeed(this.props.url)
             .then(feed => {
-                let items = feed.rss.channel.item; // Object not array!
+                let items = feed.rss.channel.item; // Converted as object not an array
                 this.setState({
                     items: Object.keys(items).map(key => items[key])
+                                             .slice(0, this.props.count)
                 });
             })
             .catch(error => {

@@ -28,8 +28,6 @@ describe('RSSFeed component', () => {
         expect(RSSFeed.defaultProps.blockName).toMatch(/^\w/);
     });
 
-    xit('enforces the count property');
-
     describe('Rendering', (wrapper = null) => {
 
         const props = {
@@ -69,30 +67,45 @@ describe('RSSFeed component', () => {
             });
         });
 
-        it('attempts to get the feed at the given URL', () => {
-            RSSLoader.getFeed = jest.fn().mockReturnValue(new Promise(() => {}));
-            wrapper = mount(<RSSFeed {...props}/>);
-            expect(RSSLoader.getFeed).toBeCalledWith(props.url);
-            RSSLoader.getFeed.mockClear();
-        });
+        describe('Mocking', (wrapper = null) => {
 
-        it('populates state with items from feed', () => {
-            RSSLoader.getFeed = jest.fn().mockReturnValue(new Promise((resolve) => {
-                resolve({
-                    rss: {
-                        channel: {
-                            // xmljson converts items array to object
-                            item: Object.assign(...state.items.map((item, i) => ({[i]: item})))
+            beforeEach(() => {
+                RSSLoader.getFeed = jest.fn().mockReturnValue(new Promise((resolve) => {
+                    resolve({
+                        rss: {
+                            channel: {
+                                // xmljson converts items array to object
+                                item: Object.assign(...state.items.map((item, i) => ({[i]: item})))
+                            }
                         }
-                    }
-                });
-            }));
+                    });
+                }));
+            });
 
-            wrapper = mount(<RSSFeed {...props}/>);
-            return Promise.resolve().then(() => {
-                expect(wrapper.state().items).toEqual(state.items);
+            afterEach(() => {
                 RSSLoader.getFeed.mockClear();
             });
+
+            it('attempts to get the feed at the given URL', () => {
+                wrapper = mount(<RSSFeed {...props}/>);
+                expect(RSSLoader.getFeed).toBeCalledWith(props.url);
+            });
+
+            it('populates state with items from feed', () => {
+                wrapper = mount(<RSSFeed {...props}/>);
+                return Promise.resolve().then(() => {
+                    expect(wrapper.state().items).toEqual(state.items);
+                });
+            });
+
+            it('limits the number of items to the count property', () => {
+                const count = 2;
+                wrapper = mount(<RSSFeed {...props} count={count}/>);
+                return Promise.resolve().then(() => {
+                    expect(wrapper.state().items.length).toBe(count);
+                });
+            });
+
         });
 
     });
