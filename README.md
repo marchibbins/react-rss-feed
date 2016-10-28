@@ -4,7 +4,13 @@ Simple [React](https://facebook.github.io/react/) component that [fetches](https
 
 Built for use in a commercial project, but mostly an excuse to demo [webpack](https://webpack.github.io/), [Jest](https://facebook.github.io/jest/) and [Enzyme](https://github.com/airbnb/enzyme). Also uses [ESLint](http://eslint.org/) and [Babel](https://babeljs.io/).
 
-## Getting started
+## Example
+
+```
+<RSSFeed url="http://example.com/feed.rss" count="10"/>
+```
+
+## Scripts
 
 Build
 
