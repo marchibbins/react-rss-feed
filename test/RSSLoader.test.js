@@ -75,8 +75,6 @@ describe('RSSLoader component', () => {
         });
     });
 
-    it('uses polyfill for Promises');
-
     describe('Mocking', () => {
 
         afterEach(() => {

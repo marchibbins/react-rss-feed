@@ -1,10 +1,6 @@
-import ES6Promise from 'es6-promise';
-
 import { to_json } from 'xmljson';
 
 import 'whatwg-fetch';
-
-ES6Promise.polyfill();
 
 export const fetchFeed = url => {
     return fetch(url)
