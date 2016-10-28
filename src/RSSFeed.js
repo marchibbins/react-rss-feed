@@ -8,7 +8,7 @@ export default class RSSFeed extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            feed: []
+            items: []
         };
     }
 
@@ -17,7 +17,7 @@ export default class RSSFeed extends React.Component {
             .then(feed => {
                 let items = feed.rss.channel.item; // Object not array!
                 this.setState({
-                    feed: Object.keys(items).map(key => items[key])
+                    items: Object.keys(items).map(key => items[key])
                 });
             })
             .catch(error => {
@@ -30,7 +30,7 @@ export default class RSSFeed extends React.Component {
     render () {
         return (
             <section className={`${this.props.blockName}`}>
-                {this.state.feed.map((item, i) => {
+                {this.state.items.map((item, i) => {
                     return <RSSItem key={i} {...item}
                                     blockName={this.props.blockName}/>;
                 })}

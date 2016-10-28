@@ -19,8 +19,6 @@ describe('RSSFeed component', () => {
         expect(RSSFeed.defaultProps.count).toBe(10);
     });
 
-    it('fetches the given URL');
-
     it('requires a blockName string property', () => {
         expect(RSSFeed.propTypes.blockName).toBe(React.PropTypes.string.isRequired);
     });
@@ -29,9 +27,9 @@ describe('RSSFeed component', () => {
         expect(RSSFeed.defaultProps.blockName).toMatch(/^\w/);
     });
 
-    it('populates feed array in state');
+    xit('populates feed array in state');
 
-    it('enforces the count property');
+    xit('enforces the count property');
 
     describe('Rendering', (wrapper = null) => {
 
@@ -41,7 +39,7 @@ describe('RSSFeed component', () => {
         };
 
         const state = {
-            feed: [
+            items: [
                 {title: 'One', description: 'Lorem ipsum', link: '#'},
                 {title: 'Two', description: 'Lorem ipsum', link: '#'},
                 {title: 'Three', description: 'Lorem ipsum', link: '#'}
@@ -52,13 +50,13 @@ describe('RSSFeed component', () => {
             wrapper = shallow(<RSSFeed {...props}/>);
         });
 
-        it('has an initial state containing an empty feed array', () => {
-            expect(wrapper.state().feed).toEqual([]);
+        it('has an initial state containing an empty items array', () => {
+            expect(wrapper.state().items).toEqual([]);
         });
 
-        it('renders one RSSItem per element in feed array', () => {
+        it('renders one RSSItem per element in items array', () => {
             wrapper.setState(state);
-            expect(wrapper.find(RSSItem).length).toBe(state.feed.length);
+            expect(wrapper.find(RSSItem).length).toBe(state.items.length);
         });
 
         it('uses the blockName in root element class', () => {
